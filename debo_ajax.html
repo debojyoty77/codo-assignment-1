@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Invoice</title>
+  </head>
+  <style>
+      .heading{
+          color: brown;
+          text-align: center;
+      }
+
+      .thanku{
+        background: rgb(255, 217, 0);
+        color: white;
+      }
+
+      .total{
+          background: lightgray;
+      }
+
+      .headline{
+          background: #9e6440;
+          color: white;
+      }
+
+      .end{
+          color: #9e6440;
+      }
+
+      .line{
+          text-align: end;
+      }
+
+      .linee{
+        color: yellow;
+        text-align: end;
+      }
+  </style>
+  <body>
+      <div class="heading" >
+          <h2>Demo Digit</h2>
+          <p>Get 61 City- Kolkata, State- West Bengal</p>
+          <p>Phone number : 846494695, Email - gsgd@codomotive.com</p>
+          <p>GST No: GH6383738</p>
+      </div>
+      <div class="table-upper">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="end">Table No:</th>
+                <th></th>
+                <th></th>
+                <th scope="col" class="end line">Take Away</th>
+              </tr>
+              <tr>
+                <th scope="col" class="end">Date Time</th>
+                <th></th>
+                <th></th>
+                <th scope="col" class="end linee">2020-10-28 19:38:48:0</th>
+              </tr>
+            </thead>
+            
+            </thead>
+          </table>
+
+          <table class="table">
+              <thead>
+                <tr class="headline">
+                    <th scope="col">No.</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">QTY Name</th>
+                    <th scope="col">Amt</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td id="order_name">Loading...</td>
+                  <td id="order_price">Loading...</td>
+                  <td id="quan">Loading...</td>
+                  <td id="amount">Loading...</td>
+                </tr>  
+                <tr>                 
+                    <td>Sub Total</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td >Rs 1200</td>
+                  </tr>
+                <tr>                 
+                    <td>Discount</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Rs 0</td>
+                  </tr>
+                  <tr class="total">
+                   
+                    <td>GrandTotal</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Rs 1260</td>
+                  </tr>
+                  <tr class="thanku">
+                    <td></td>
+                    <td></td>
+                    <td >Thank You</td>
+                    <td></td>
+                    <td></td>
+                    
+                  </tr>
+              </tbody>
+          </table>
+
+          
+      </div>
+  </body>
+  <script>
+      let xhr = new XMLHttpRequest;
+    //Call the open function, GET-type of request, url, true-asynchronous
+    xhr.open('GET', 'https://run.mocky.io/v3/16375822-6d22-4d61-b131-6672e9e13884', true)
+    //call the onload 
+    xhr.onload = function() 
+        {
+            //check if the status is 200(means everything is okay)
+            if (this.status === 200) 
+                {
+                    //return server response as an object with JSON.parse
+                    var data = JSON.parse(this.responseText);
+                    var order = data.orderBookDetails.orderItemsList[0]
+                    console.log(JSON.parse(this.responseText));
+                    document.getElementById("order_name").innerText = order.menu_name;
+                    document.getElementById("order_price").innerText = order.rate;
+                    document.getElementById("quan").innerText = order.menu_quantity;
+                    document.getElementById("amount").innerText = order.menu_amount;
+                    
+                    
+                    
+
+        }
+                }
+    //call send
+    xhr.send();
+
+    
+  </script>
+</html>

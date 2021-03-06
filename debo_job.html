@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="regform">
+        <h1>
+ Registration Form</h1>
+</div>
+<div class="main">
+    
+        <form method="POST">
+            <div id="name">
+                <h2 class="name">
+Name<span style="color:red">*</span> </h2>
+<label class="firstlabel">first name</label>
+<input class="firstname" type="text" name="first_name"><br><br>
+<label class="lastlabel">last name</label>                
+<input class="lastname" type="text" name="last_name"><br>
+                
+            </div>
+<h2 class="name">
+Age <span style="color:red">*</span></h2>
+<input class="Age" type="number" name="Age">
+            <h2 class="name">
+Email<span style="color:red">*</span></h2>
+<input class="email" type="email" name="email">
+            <h2 class="name">
+Phone<span style="color:red">*</span></h2>
+ <label class="area-code">Area Code</label>
+<input class="Code" type="text" name="area_code">
+            <label class="phone-number">Phone Number</label>
+            <input class="number" type="text" name="phone">
+           
+    
+    
+            <h2 class="name">
+Qualification<span style="color:red">*</span></h2>
+<select class="option" name="subject">
+                <option disabled="disabled" selected="selected">--Choose option--</option>
+                <option>BTECH</option>
+                <option>BSC</option>
+                <option>MTECH</option>
+                <option>MSC</option>
+                <option>BCA</option>
+                <option>MCA</option>
+            </select>
+    
+            <h2 id="coustomer">
+Gender<span style="color:red">*</span></h2>
+<label class="radio">
+                <input class="radio-one" type="radio" checked="checked" name="rdiobtn">
+                <span class="checkmark"></span>
+               Male
+            </label>
+    
+            <label class="radio">
+                <input class="radio-two" type="radio" name="rdiobtn">
+                <span class="checkmark"></span>
+               Female
+            </label>
+
+<br>
+<h2>About Yourself</h2><span style="color:red">*</span>
+<input type="text" id="about" maxlength="250">
+<br>
+<h2>CV</h2>
+<input type="file" accept=".doc,.docx,application/pdf">
+<br>
+    
+            <button type="submit">Register</button>
+    
+    
+        </form>
+</div>
+</body>
+</html>
